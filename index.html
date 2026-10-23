@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="ko">
+<head><style>html.phL body{visibility:hidden}</style><script>/* 글꼴·최신 버전 확인될 때까지 잠깐 가리기 (옛 글꼴·옛 화면 깜빡임 방지) */(function(){var d=document.documentElement,n=2;d.classList.add("phL");function o(){d.classList.remove("phL")}window.__phDone=function(){if(--n<=0)o()};setTimeout(o,1200);function f(){try{var F=document.fonts;Promise.all([F.load('700 14px "Silkscreen"'),F.load('12px "Galmuri11"'),F.load('8px "Press Start 2P"')]).then(function(){return F.ready}).then(window.__phDone,window.__phDone)}catch(e){o()}}if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",f);else f()})();</script><script>/* 옛 버전 캐시 자동 갱신 */(function(){var V="1792772000";try{fetch(location.pathname+"?_="+Date.now(),{cache:"no-store"}).then(function(r){return r.text()}).then(function(t){var m=t.match(/var V="(\d+)"/);if(m&&m[1]!==V&&location.search.indexOf("v="+m[1])<0){location.replace(location.pathname+"?v="+m[1])}if(!(m&&m[1]!==V)&&window.__phDone)__phDone()}).catch(function(){window.__phDone&&__phDone()})}catch(e){window.__phDone&&__phDone()}})();</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>MANDU PANG · 만두팡</title>
+<meta name="description" content="이 게임은 박현아가 제공하는 비상업적 게임입니다.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="만두팡">
+<meta property="og:title" content="MANDU PANG · 만두팡">
+<meta property="og:description" content="이 게임은 박현아가 제공하는 비상업적 게임입니다.">
+<meta property="og:url" content="https://iamhyona.github.io/mandu/">
+<meta property="og:image" content="https://iamhyona.github.io/mandu/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1d1712">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="만두팡">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" href="favicon-64.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=Press+Start+2P&display=block">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/galmuri@2.40.3/dist/galmuri.css">
+<style>
+:root{--g1:#dfe4ff;--g2:#9aa6dc;--gb:#33386e;--neon:#9fb4ff}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;height:100%;background:#0b0b0f;overflow:hidden}
+body{height:100vh;height:100dvh;color:var(--g1);font-family:Silkscreen,Galmuri11,-apple-system,'Apple SD Gothic Neo',sans-serif;
+  -webkit-user-select:none;user-select:none;-webkit-touch-callout:none;touch-action:none;overscroll-behavior:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+.gb{height:100%;display:flex;flex-direction:column;padding:calc(env(safe-area-inset-top,0px) + 4px) 4px calc(env(safe-area-inset-bottom,0px) + 4px);max-width:520px;margin:0 auto;background:#17171f}
+.lbl{display:flex;align-items:center;gap:8px;padding:9px 6px 8px;font:700 11px Silkscreen;color:#b4b4cc;letter-spacing:1px}
+.lbl em{flex:1;height:6px;background:repeating-linear-gradient(90deg,#e8284f 0 4px,transparent 4px 5px,#f26a0d 5px 9px,transparent 9px 10px,#f2b000 10px 14px,transparent 14px 15px,#10b870 15px 19px,transparent 19px 20px,#00a8e0 20px 24px,transparent 24px 25px,#8a3cf0 25px 29px,transparent 29px 30px)}
+.bezel{flex:1;min-height:0;display:flex;flex-direction:column;padding:8px;border-radius:10px;background:#101016;box-shadow:inset 0 0 0 1px rgba(255,255,255,.05)}
+.screen{flex:1;min-height:0;display:flex;flex-direction:column;gap:8px;padding:8px;border-radius:8px;position:relative;overflow:hidden;
+  background:#0a0c1d;box-shadow:inset 0 0 0 1px rgba(150,160,255,.25)}
+.box{flex:1;border:3px solid var(--gb);border-radius:9px;padding:6px 2px 7px;text-align:center;background:#10132b;box-shadow:0 0 10px rgba(150,170,255,.08)}
+.box small{display:block;font:700 9px Silkscreen;color:var(--g2);letter-spacing:1px;margin-bottom:3px}
+.box span{font:700 16px Silkscreen;color:var(--g1);text-shadow:0 0 6px rgba(220,226,255,.55);white-space:nowrap}
+.box .hearts{color:#ff4d6d;text-shadow:0 0 6px #ff4d6d;font-family:Galmuri11,sans-serif;font-size:13px;letter-spacing:1px}
+.field{flex:1;min-height:0;position:relative;border-radius:6px;border:2px solid #3a3f80;box-shadow:0 0 14px rgba(150,170,255,.18);background:#0a0c1d;overflow:hidden} /* 단색 */
+.hud{display:flex;gap:4px}
+.hud .box{flex:1 1 0;min-width:0;height:40px;border-width:2px;border-radius:8px;padding:0 2px;display:flex;flex-direction:row;gap:3px;align-items:center;justify-content:center}
+.hud .box.wide{flex:1.6 1 0}
+.hud .flag{font:13px Galmuri11,sans-serif!important;color:var(--g2)!important;text-shadow:none!important}
+.hud .box small{font-size:7px;letter-spacing:.5px;margin-bottom:4px}
+.hud .box span{font-size:14px}
+.hud .box .hearts{font-size:13px;letter-spacing:0}
+.btnb{color:var(--g1);background:#11132a;cursor:pointer}
+.pix{display:inline-flex;width:16px;height:16px;filter:drop-shadow(0 0 3px currentColor);color:var(--g1)}
+.pix svg{width:100%;height:100%;display:block}
+.pix[data-ic=trophy]{color:#ffd23f}
+.pix[data-ic=flag]{color:var(--g2);filter:none;width:14px;height:14px}
+.hearts{display:inline-flex;gap:2px;align-items:center;color:#ff4d6d}
+.hearts .pix{width:14px;height:12px;color:#ff4d6d}
+.hearts b{font:700 12px Silkscreen;margin-left:2px}
+.btnb:active,.btnb.on{background:#252a5e;box-shadow:0 0 10px rgba(150,170,255,.35)}
+.btnb[disabled]{opacity:.35}
+.btnb.off i{opacity:.4}
+canvas{display:block;width:100%;height:100%;touch-action:none}
+.ctl{display:flex;gap:6px}
+.ctl button{flex:1;height:34px;border:3px solid var(--gb);border-radius:9px;font:700 11px Silkscreen;letter-spacing:1px;color:var(--g1);background:#11132a}
+.ctl button:active,.ctl button.on{background:#252a5e;box-shadow:0 0 10px rgba(150,170,255,.35)}
+.ctl button[disabled]{opacity:.35}
+/* overlay */
+.ov{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px;background:rgba(4,5,18,.88);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);z-index:5;text-align:center}
+.ov.show{display:flex}
+.title{display:flex;gap:6px;margin-bottom:6px}
+.title b{font:28px 'Press Start 2P';text-shadow:0 0 8px currentColor,0 0 22px currentColor}
+.sub{font:700 12px Silkscreen;color:var(--g2);letter-spacing:2px}
+.btn{width:min(260px,100%);padding:14px 10px;border:3px solid var(--gb);border-radius:10px;font:700 14px Silkscreen;letter-spacing:2px;color:var(--g1);background:#11132a;display:flex;flex-direction:column;align-items:center;gap:6px}
+.btn:active{background:#252a5e}
+.btn small{font:12px Galmuri11,sans-serif;letter-spacing:0;opacity:.75}
+.btn.y{border-color:#a37f12;color:#ffd23f;background:#1f1a08;text-shadow:0 0 6px rgba(255,210,63,.5)}
+.btn.easy{border-color:#0b6f93;color:#7fe0ff;background:#06202b}
+.btn.hard{border-color:#8f1d36;color:#ff8aa0;background:#2a0c13}
+.big{font:700 40px Silkscreen;color:#fff;text-shadow:0 0 10px var(--neon),0 0 26px var(--neon);margin:4px 0}
+.msg{font:13px/1.7 Galmuri11,sans-serif;color:var(--g2)}
+.row{display:flex;gap:6px;width:min(260px,100%)}
+.row input{flex:1;min-width:0;height:46px;border:3px solid var(--gb);border-radius:10px;background:#080a1c;color:var(--g1);font:15px Galmuri11,sans-serif;padding:0 10px;outline:none;-webkit-user-select:text;user-select:text}
+.row button{width:70px;border:3px solid var(--gb);border-radius:10px;font:700 14px Silkscreen;background:#161a3c}
+.x{font:700 22px Silkscreen;color:#bfc3c9;padding:6px 14px;margin-top:4px}
+.list{width:min(290px,100%);max-height:52%;overflow:auto;border:3px solid var(--gb);border-radius:10px;background:#080a1c;text-align:left}
+.list div{display:grid;grid-template-columns:30px 1fr auto 40px;gap:6px;align-items:center;padding:8px 10px;font:13px Galmuri11,sans-serif;border-bottom:1px solid rgba(150,170,255,.08)}
+.list .r{color:var(--g2)} .list .s{font:700 13px Silkscreen;color:#fff} .list .m{font:700 8px Silkscreen;text-align:right}
+.list .me{background:rgba(150,170,255,.12)}
+.list .em{display:block;text-align:center;color:var(--g2);padding:20px}
+.credit{font:12px/1.7 Galmuri11,sans-serif;color:rgba(220,226,255,.45);margin-top:8px}
+.help{font:12px/1.8 Galmuri11,sans-serif;color:var(--g2)}
+.flash{position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 0 rgba(150,170,255,0);z-index:4}
+.flash.go{animation:fl .9s}
+@keyframes fl{30%{box-shadow:inset 0 0 40px 10px rgba(150,170,255,.6)}}
+</style>
+<script>/* 카톡 등 인앱 브라우저: 실제 보이는 높이로 화면 맞춤 */(function(){var d=document.documentElement;function f(){d.style.setProperty('--app-h',window.innerHeight+'px')}f();addEventListener('resize',f);addEventListener('orientationchange',function(){setTimeout(f,300)});addEventListener('pageshow',f);setTimeout(f,250);setTimeout(f,1000)})();</script>
+<style>html,body{height:var(--app-h,100dvh)!important}</style>
+<link rel="stylesheet" href="../games/ph.css?v=7"><style>#ovTitle{--phB:#8a6a45;--phT:#fff1dc;--phBg:#2a1f16;--phR:rgba(255,220,170,.12);--phC:rgba(255,236,210,.5);padding:0!important}
+:root{--g1:#fff1dc;--g2:#d9b98f;--gb:#6b4f33;--neon:#ffcf8a}
+.gb{background:#1d1712}
+.bezel{background:#16110d}
+.screen{background:#231a13;box-shadow:inset 0 0 0 1px rgba(255,200,140,.22)}
+.box{border-color:var(--gb);background:#2c2117;box-shadow:none}
+.box span{color:var(--g1);text-shadow:0 0 6px rgba(255,220,170,.45)}
+.btnb{background:#2c2117}.btnb:active,.btnb.on{background:#4a3624;box-shadow:0 0 10px rgba(255,200,140,.3)}
+.pix[data-ic=flag]{color:var(--g2)}
+.field{border-color:#6b4f33;box-shadow:0 0 14px rgba(255,190,120,.12);background:#1a130e}
+.ov{background:rgba(26,18,12,.9)}
+.btn{border-color:var(--gb);background:#2c2117}.btn:active{background:#4a3624}
+.row input{border-color:var(--gb);background:#160f0a}.row button{border-color:var(--gb);background:#3a2a1c}
+.list{border-color:var(--gb);background:#160f0a}
+.nextc{width:34px;height:34px;display:block}
+.hud .box small{margin:0 4px 0 0}
+</style></head>
+<body>
+<div class="gb">
+  <div class="lcd-label"><i class="ln"></i><span class="copy">© 2026 PARK HYONA</span><i class="ln"></i></div>
+  <div class="bezel"><div class="screen" id="screen">
+    <div class="hud">
+      <div class="box wide"><span id="hScore">0</span></div>
+      <div class="box"><small>NEXT</small><canvas class="nextc" id="nextC" width="68" height="68"></canvas></div>
+      <button class="box btnb" id="bPause" aria-label="일시정지"><i class="pix" data-ic="pause"></i></button>
+      <button class="box btnb on" id="bSound" aria-label="소리"><i class="pix" data-ic="note"></i></button>
+      <button class="box btnb" id="bRank" aria-label="랭킹"><i class="pix" data-ic="trophy"></i></button>
+    </div>
+    <div class="field" id="field"><canvas id="cv"></canvas></div>
+
+    <div class="ov show" id="ovTitle"><div class="phS"><i class="phS-sp a"></i><div class="phS-logo" data-word="MANDU|PANG"></div><div class="phS-show" id="show"></div><i class="phS-sp b"></i><div class="phS-btns"><button class="phS-b" id="bStart">START</button><button class="phS-b gold" id="bRank2">RANKING</button></div><i class="phS-sp c"></i><div class="phS-credit">이 게임은 서울 마포구에 사는 박현아가 만든<br>비상업용 게임이에요. 팡팡이들을 모아<br>통통한 교자만두를 빚어 주세요.</div></div></div>
+    <div class="ov" id="ovPause">
+      <div class="big" style="font-size:28px">PAUSE</div>
+      <button class="btn" id="bResume">RESUME</button>
+      <button class="btn" id="bRestart">RESTART</button>
+      <button class="btn" id="bMenu">MAIN MENU</button>
+    </div>
+    <div class="ov" id="ovOver">
+      <div class="sub" id="overTitle">GAME OVER</div>
+      <div class="big" id="overScore">0</div>
+      <div class="msg" id="overInfo"></div>
+      <div class="row"><input id="nameIn" maxlength="8" placeholder="이름" autocomplete="off"><button id="bSave">OK</button></div>
+      <button class="btn" id="bRetry">RETRY</button>
+      <button class="btn" id="bMenu2">MAIN MENU</button>
+      <button class="btn y" id="bRank3">RANKING</button>
+    </div>
+    <div class="ov" id="ovRank">
+      <div class="sub">RANKING</div>
+      <div class="list" id="rankList"></div>
+      <button class="x" data-close="ovRank">✕</button>
+    </div>
+  </div></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/matter-js@0.19.0/build/matter.min.js"></script>
+<script src="../games/ph.js?v=6"></script>
+<script>
+(()=>{
+const RANK_URL='https://script.google.com/macros/s/AKfycbzkdjVleobj98oyxlC77cUf5txCRiSB6D1zgRWU56pX22ElXAx9R8xFRGnV0nKAUbwC/exec';
+const $=id=>document.getElementById(id);
+const cv=$('cv'),x=cv.getContext('2d');
+const W=300,H=470,TOP=78; // 고정 좌표계 · TOP 위로 넘치면 위험선
+let SC=1,OX=0,OY=0,dpr=1;
+/* ===== 팡팡이 그림 (팡야팡야와 같은 친구들) ===== */
+const COL={1:['#e8352e','#ff8a73','#a8170f'],2:['#efe6cf','#fffdf4','#b9a98a'],3:['#3e8fe6','#9fd3ff','#1c58ad'],4:['#f6a51e','#ffe08a','#c06a00'],5:['#e264c4','#ffc0ee','#a32c8a'],6:['#6cc644','#d2f5a6','#3a8a24'],7:['#3fc9b0','#b4f5e6','#178a74'],8:['#8a4fe0','#d4b8ff','#5a26a8'],10:['#a8683a','#ecc196','#6e3f1c'],9:['#7c818a','#c3c8d0','#4a4f57']}; /* 9: 대전 방해 블록 */
+const star=(cx,cy,R,r)=>'M'+[...Array(10)].map((_,k)=>{const a=-Math.PI/2+k*Math.PI/5,q=k%2?r:R;return (cx+q*Math.cos(a)).toFixed(2)+' '+(cy+q*Math.sin(a)).toFixed(2)}).join(' L')+'Z';
+const hexa=(cx,cy,R)=>'M'+[...Array(6)].map((_,k)=>{const a=Math.PI/6+k*Math.PI/3;return (cx+R*Math.cos(a)).toFixed(2)+' '+(cy+R*Math.sin(a)).toFixed(2)}).join(' L')+'Z';
+const SH={1:'<path d="M20 35.5C7.5 29 3.2 22.5 3.2 15.2C3.2 8.6 7.6 4.2 13 4.2C16.3 4.2 18.7 6 20 8.6C21.3 6 23.7 4.2 27 4.2C32.4 4.2 36.8 8.6 36.8 15.2C36.8 22.5 32.5 29 20 35.5Z"/>',
+2:'<circle cx="20" cy="10.5" r="9"/><circle cx="29.5" cy="20" r="9"/><circle cx="20" cy="29.5" r="9"/><circle cx="10.5" cy="20" r="9"/><rect x="8" y="8" width="24" height="24" rx="7"/>',
+3:'<path d="M20 4C27 11.5 36.5 16.5 36.5 25C36.5 32.6 29.6 37 20 37C10.4 37 3.5 32.6 3.5 25C3.5 16.5 13 11.5 20 4Z"/>',
+4:'<path d="'+star(20,21.3,16.2,11.6)+'"/>',5:'<path d="'+hexa(20,20.3,16.2)+'"/>',
+6:'<path d="M20 15.5C21.2 10.5 24.6 6.6 31 5.6C31.6 11.8 27.6 15.4 22 16.3Z"/><path d="M20 15.5C18.8 11.6 15.6 8.6 9.6 8.4C9.6 13.6 13.6 16.4 18.4 16.5Z"/><rect x="4.5" y="14.5" width="31" height="22" rx="11"/>',
+7:'<rect x="4" y="4.5" width="32" height="31.5" rx="15"/>',8:'<path d="M20 3.5C21 3.5 22 4 22.8 4.9L35.6 17.6C36.6 18.7 36.6 20.3 35.6 21.4L22.8 34.6C21.3 36.2 18.7 36.2 17.2 34.6L4.4 21.4C3.4 20.3 3.4 18.7 4.4 17.6L17.2 4.9C18 4 19 3.5 20 3.5Z"/>',10:'<rect x="5" y="5" width="30" height="30" rx="3.5"/>',9:'<rect x="5" y="5" width="30" height="30" rx="7"/>'};
+const SW={1:3.5,2:2,3:3.5,4:9,5:10,6:2,7:2,8:8,9:2,10:2},FY={1:-1,2:0,3:4,4:2,5:0,6:6,7:0,8:2,9:0,10:0},CT={1:[.5,.42],2:[.5,.45],3:[.5,.62],4:[.5,.55],5:[.5,.48],6:[.5,.62],7:[.5,.45],8:[.5,.52],9:[.5,.45],10:[.5,.48]};
+function face(dy,mood){const o='#2a1712',hl=(x)=>`<ellipse cx="${x+.4}" cy="16.8" rx=".55" ry=".7" fill="#fff" opacity=".8"/>`;
+  let eyes=`<ellipse cx="16" cy="17.6" rx="1.7" ry="2.3" fill="${o}"/><ellipse cx="24" cy="17.6" rx="1.7" ry="2.3" fill="${o}"/>${hl(16)}${hl(24)}`;
+  let mouth=`<path d="M15.6 21.4Q20 26.6 24.4 21.4Q20 23.4 15.6 21.4Z" fill="${o}" stroke="${o}" stroke-width="1.2" stroke-linejoin="round"/>`;
+  if(mood==='b')eyes=`<path d="M14.3 17.6q1.7 1.5 3.4 0M22.3 17.6q1.7 1.5 3.4 0" stroke="${o}" stroke-width="1.5" fill="none" stroke-linecap="round"/>`;
+  if(mood==='o'){eyes=`<ellipse cx="16" cy="17.2" rx="2.1" ry="2.6" fill="${o}"/><ellipse cx="24" cy="17.2" rx="2.1" ry="2.6" fill="${o}"/>${hl(16)}${hl(24)}`;mouth=`<ellipse cx="20" cy="23.2" rx="1.8" ry="2" fill="${o}"/>`}
+  if(mood==='x'){eyes=`<path d="M14.2 16l3.6 3.6M17.8 16l-3.6 3.6M22.2 16l3.6 3.6M25.8 16l-3.6 3.6" stroke="${o}" stroke-width="1.6" stroke-linecap="round"/>`;mouth=`<path d="M16.5 22.5q3.5 3.8 7 0" fill="${o}"/>`}
+  return `<g transform="translate(0 ${dy})">${eyes}${mouth}</g>`}
+function pieceSVG(c,mood){const [b,l,d]=COL[c],sh=SH[c],w=SW[c],[cx,cy]=CT[c];
+  const body=f=>`<g fill="${f}" stroke="${f}" stroke-width="${w}" stroke-linejoin="round">${sh}</g>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 44 44" width="88" height="88"><defs><radialGradient id="g" cx="${cx}" cy="${cy}" r=".62"><stop offset="0" stop-color="${l}"/><stop offset=".5" stop-color="${b}"/><stop offset=".86" stop-color="${b}"/><stop offset="1" stop-color="${d}"/></radialGradient><mask id="m" maskUnits="userSpaceOnUse" x="-5" y="-5" width="50" height="50">${body('#fff')}</mask><filter id="s" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation=".9"/></filter></defs><g fill="#231510" stroke="#231510" stroke-width="${w+3.2}" stroke-linejoin="round">${sh}</g>${body('url(#g)')}<g mask="url(#m)"><g fill="none" stroke="${d}" stroke-width="3" stroke-linejoin="round" transform="translate(0 1.3)" opacity=".55" filter="url(#s)">${sh}</g><ellipse cx="13.5" cy="9.5" rx="5.2" ry="2.6" transform="rotate(-28 13.5 9.5)" fill="#fff" opacity=".85" filter="url(#s)"/><circle cx="9.5" cy="14" r="1.1" fill="#fff" opacity=".7"/></g>${face(FY[c],mood)}</svg>`}
+/* 교자만두: 팡팡이들이 모여서 만들어지는 마지막 단계 */
+function manduSVG(mood){const o='#231510';
+ const sh='<path d="M3.5 27.5C3.5 16.5 10.8 8.2 20 8.2C29.2 8.2 36.5 16.5 36.5 27.5C36.5 32.6 30.5 34.6 20 34.6C9.5 34.6 3.5 32.6 3.5 27.5Z"/>';
+ return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 44 44" width="88" height="88"><defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fffaf0"/><stop offset=".55" stop-color="#f7e6c4"/><stop offset=".8" stop-color="#e9b45c"/><stop offset="1" stop-color="#b8702a"/></linearGradient><filter id="s" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation=".8"/></filter></defs>
+ <g fill="${o}" stroke="${o}" stroke-width="5.6" stroke-linejoin="round">${sh}</g><g fill="url(#g)">${sh}</g>
+ <path d="M8.6 16.2q1.9-3.4 3.8 0q1.9-3.8 3.8-.3q1.9-4 3.8-.2q1.9-4 3.8.2q1.9-3.8 3.8.3q1.9-3.4 3.8 0" fill="none" stroke="#c9a66e" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+ <ellipse cx="13" cy="12.6" rx="4.4" ry="1.8" transform="rotate(-22 13 12.6)" fill="#fff" opacity=".9" filter="url(#s)"/>
+ <ellipse cx="11" cy="26.5" rx="2.3" ry="1.3" fill="#ff8f8f" opacity=".55"/><ellipse cx="29" cy="26.5" rx="2.3" ry="1.3" fill="#ff8f8f" opacity=".55"/>${face(5,mood)}</svg>`}
+const svgURL=s=>'data:image/svg+xml;charset=utf-8,'+encodeURIComponent(s);
+const TK=[1,3,4,2,5,6,7,8,10,'M']; // 단계: 빨강 하트 → 파랑 물방울 → 주황 별 → 하양 꽃 → 분홍 육각 → 초록 새싹 → 민트 → 보라 다이아 → 갈색 네모 → 교자만두
+const TR=[13,17,22,28,35,43,52,61,71,86]; // 반지름
+const TS=[1,3,6,10,15,21,28,36,45,55]; // 합쳐질 때 점수
+const NAME=['하트','물방울','별','꽃','육각','새싹','민트','다이아','네모','교자만두'];
+const IMG={};
+for(let k=0;k<10;k++)for(const m of ['','b','o','x']){const im=new Image();im.src=svgURL(k===9?manduSVG(m):pieceSVG(TK[k],m));IMG[m+k]=im}
+
+/* ===== 소리 ===== */
+let ac,sound=true,master=null;
+function silentWav(){const n=800,b=new ArrayBuffer(44+n),v=new DataView(b),w=(o,t)=>[...t].forEach((ch,i)=>v.setUint8(o+i,ch.charCodeAt(0)));w(0,"RIFF");v.setUint32(4,36+n,true);w(8,"WAVEfmt ");v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,1,true);v.setUint32(24,8000,true);v.setUint32(28,8000,true);v.setUint16(32,1,true);v.setUint16(34,8,true);w(36,"data");v.setUint32(40,n,true);for(let i=0;i<n;i++)v.setUint8(44+i,128);return new Blob([b],{type:"audio/wav"})}
+function unlock(){try{if(navigator.audioSession)navigator.audioSession.type='playback'}catch(e){} /* 아이폰 무음 스위치에도 소리 나게 */
+ try{ac=ac||new(window.AudioContext||window.webkitAudioContext)();if(ac.state!=='running')ac.resume();const bf=ac.createBuffer(1,1,22050),s=ac.createBufferSource();s.buffer=bf;s.connect(ac.destination);s.start(0)}catch(e){}
+ if(!window._sa){try{const a=new Audio(URL.createObjectURL(silentWav()));a.loop=true;a.setAttribute('playsinline','');a.play().catch(()=>{});window._sa=a}catch(e){}}}
+['pointerdown','touchend','keydown'].forEach(t=>addEventListener(t,()=>{if(!ac||ac.state!=='running')unlock()},{passive:true}));
+function out(){if(!master||master.context!==ac){master=ac.createGain();master.connect(ac.destination)}master.gain.value=sound?1:0;return master}
+function tone(type,f1,f2,dur,vol,delay){if(!ac||!sound)return;const t=ac.currentTime+(delay||0),o=ac.createOscillator(),g=ac.createGain();o.type=type;o.frequency.setValueAtTime(f1,t);if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+dur);g.gain.setValueAtTime(vol,t);g.gain.exponentialRampToValueAtTime(.0001,t+dur);o.connect(g).connect(out());o.start(t);o.stop(t+dur+.02)}
+const sfx={
+ drop:()=>tone('triangle',420,180,.12,.09),
+ bump:v=>tone('sine',160+Math.random()*40,90,.08,Math.min(.06,v*.02)),
+ merge:k=>{const f=330*Math.pow(1.122,k);tone('square',f,f*1.5,.09,.05);tone('triangle',f*2,f*3,.14,.06,.04)},
+ mandu:()=>[523,659,784,1047,1319].forEach((f,i)=>tone('square',f,0,.16,.06,i*.08)),
+ party:()=>{[784,988,1175,1568,1976].forEach((f,i)=>tone('square',f,0,.18,.06,i*.06));[392,494,587].forEach((f,i)=>tone('triangle',f,0,.5,.08,.3+i*.05))},
+ warn:()=>tone('square',880,0,.06,.035),
+ over:()=>[523,440,349,262].forEach((f,i)=>tone('triangle',f,f*.97,.35,.08,i*.28))};
+/* 배경음: 말랑말랑 통통 튀는 원곡 (F장조, 느긋한 셔플) */
+const BG={on:false,at:0,n:0};
+const MEL='C5 . F5 . A5 . G5 F5|G5 . . E5 C5 . . .|D5 . F5 . A5 . C6 A5|G5 . . . . . . .|A5 . C6 . A5 . G5 F5|G5 . A5 G5 F5 . D5 .|E5 . G5 . F5 . E5 D5|F5 . . . . . . .'.split('|').map(b=>b.split(' '));
+const BAS=['F2','C3','D2','C3','F2','A#2','C3','F2'];
+const NN=n=>{const m=n.match(/([A-G])(#?)(\d)/);const s={C:0,D:2,E:4,F:5,G:7,A:9,B:11}[m[1]]+(m[2]?1:0);return 440*Math.pow(2,(s+(+m[3]+1)*12-69)/12)};
+function bgmTick(){if(!BG.on||!ac||!sound)return;const sp=60/112/2;while(BG.at<ac.currentTime+.25){const bar=(BG.n>>3)%8,st=BG.n&7,sw=st%2?sp*.18:0,t=BG.at+sw;
+  const n=MEL[bar][st];if(n&&n!=='.'){const o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.value=NN(n);g.gain.setValueAtTime(.05,t);g.gain.exponentialRampToValueAtTime(.001,t+sp*1.6);o.connect(g).connect(out());o.start(t);o.stop(t+sp*1.8)}
+  if(st%2===0){const o=ac.createOscillator(),g=ac.createGain();o.type='sine';o.frequency.value=NN(BAS[bar])*(st===4?1.5:1);g.gain.setValueAtTime(.09,t);g.gain.exponentialRampToValueAtTime(.001,t+sp*1.4);o.connect(g).connect(out());o.start(t);o.stop(t+sp*1.6)}
+  if(st===2||st===6){const o=ac.createOscillator(),g=ac.createGain();o.type='square';o.frequency.value=NN(BAS[bar])*4;g.gain.setValueAtTime(.012,t);g.gain.exponentialRampToValueAtTime(.0005,t+.08);o.connect(g).connect(out());o.start(t);o.stop(t+.1)}
+  BG.at+=sp;BG.n++}}
+function bgmStart(){if(!ac)return;BG.on=true;BG.at=ac.currentTime+.1;BG.n=0}
+function bgmStop(){BG.on=false}
+/* 진동: 안드로이드 vibrate, 아이폰 스위치 햅틱 */
+const hapEl=(()=>{try{const l=document.createElement('label');l.style.cssText='position:fixed;left:-99px;top:0;width:1px;height:1px;overflow:hidden;opacity:0';const i=document.createElement('input');i.type='checkbox';i.setAttribute('switch','');l.appendChild(i);document.body.appendChild(l);return l}catch(e){return null}})();
+function buzz(p){try{if(navigator.vibrate){navigator.vibrate(p);return}if(hapEl)hapEl.click()}catch(e){}}
+
+/* ===== 물리 (Matter.js) ===== */
+const {Engine,Bodies,Composite,Body,Events}=Matter;
+let engine=null,bodies=[],state='title',score=0,best=0,cur=0,nxt=0,aimX=W/2,dropT=0,lastDrop=null,FX=[],shake=0,warnT=0,overT=0,combo=0,comboT=0,maxTier=0,lastWin=null,tGame=0,mergeQ=[];
+try{best=+localStorage.getItem('mandu-best')||0}catch(e){}
+const pick=()=>Math.floor(Math.random()*Math.min(5,Math.max(3,maxTier)));
+function newWorld(){engine=Engine.create();engine.gravity.y=1.15;engine.positionIterations=8;engine.velocityIterations=6;
+ const o={isStatic:true,friction:.3,restitution:.1,label:'wall'},T=60;
+ Composite.add(engine.world,[Bodies.rectangle(W/2,H+T/2,W+2*T,T,o),Bodies.rectangle(-T/2,H/2,T,H*3,o),Bodies.rectangle(W+T/2,H/2,T,H*3,o)]);
+ bodies=[];mergeQ=[];
+ Events.on(engine,'collisionStart',ev=>{for(const p of ev.pairs){const a=p.bodyA,b=p.bodyB;if(a.tier!=null&&a.tier===b.tier)mergeQ.push([a,b]);
+   const v=Math.hypot(a.velocity.x-b.velocity.x,a.velocity.y-b.velocity.y);if(v>2.5)sfx.bump(v)}});
+ Events.on(engine,'collisionActive',ev=>{for(const p of ev.pairs){const a=p.bodyA,b=p.bodyB;if(a.tier!=null&&a.tier===b.tier)mergeQ.push([a,b])}})}
+function addPiece(k,px,py,vy){const r=TR[k],b=Bodies.circle(px,py,r,{restitution:.12,friction:.25,frictionStatic:.5,frictionAir:.004,density:.0012,label:'p'});
+ b.tier=k;b.born=tGame;b.over=0;b.pop=tGame;b.blink=Math.random()*4;if(vy)Body.setVelocity(b,{x:0,y:vy});Composite.add(engine.world,b);bodies.push(b);return b}
+function startGame(){score=0;maxTier=0;combo=0;FX=[];overT=0;warnT=0;tGame=0;newWorld();cur=pick();nxt=pick();aimX=W/2;dropT=0;lastDrop=null;state='play';
+ ['ovTitle','ovOver','ovPause','ovRank'].forEach(hide);$('field').classList.remove('dead');hud();unlock();bgmStart();drawNext()}
+function drop(){if(state!=='play'||dropT>0)return;const r=TR[cur];const px=Math.max(r+1,Math.min(W-r-1,aimX));lastDrop=addPiece(cur,px,TOP-r-6,2);sfx.drop();buzz(8);cur=nxt;nxt=pick();dropT=.5;drawNext()}
+function doMerges(){if(!mergeQ.length)return;const done=new Set();
+ for(const [a,b] of mergeQ){if(done.has(a)||done.has(b)||a.gone||b.gone)continue;done.add(a);done.add(b);a.gone=b.gone=1;Composite.remove(engine.world,[a,b]);bodies=bodies.filter(o=>o!==a&&o!==b);
+  const k=a.tier,mx=(a.position.x+b.position.x)/2,my=(a.position.y+b.position.y)/2;
+  combo=tGame-comboT<1.2?combo+1:1;comboT=tGame;const mul=Math.min(5,combo);
+  if(k===9){ // 만두 + 만두 = 만두 파티!
+   const pts=500*mul;score+=pts;burst(mx,my,'#ffd38a',60,true);FX.push({txt:'만두 파티! +'+pts,x:mx,y:my-20,l:1.8,c:'#ffd38a',big:1});sfx.party();buzz([40,40,80]);shake=.5;continue}
+  const nk=k+1,nb=addPiece(nk,mx,my,-1.2);nb.pop=tGame;maxTier=Math.max(maxTier,nk);
+  const pts=TS[nk]*mul;score+=pts;burst(mx,my,colorOf(nk),10+nk*3,nk>=7);
+  FX.push({txt:'+'+pts+(mul>1?' x'+mul:''),x:mx,y:my-TR[nk]-6,l:1,c:mul>1?'#ffd23f':'#fff1dc'});
+  if(nk===9){FX.push({txt:'교자만두 완성!',x:W/2,y:H*.35,l:1.8,c:'#ffd38a',big:1});sfx.mandu();buzz([30,30,60]);shake=.35}else{sfx.merge(nk);buzz(nk>=6?25:12)}}
+ mergeQ=[];if(score>best){best=score;try{localStorage.setItem('mandu-best',best)}catch(e){}}hud()}
+function colorOf(k){return k===9?'#f7e6c4':COL[TK[k]][0]}
+function burst(px,py,col,n,big){for(let i=0;i<n;i++){const a=Math.random()*6.28,s=40+Math.random()*(big?260:160);FX.push({x:px,y:py,vx:Math.cos(a)*s,vy:Math.sin(a)*s-40,l:.5+Math.random()*.5,c:Math.random()<.35?'#fff':col,s:big?4:3})}}
+function checkOver(dt){let worst=0;for(const b of bodies){if(b===lastDrop&&tGame-b.born<1.2)continue;if(tGame-b.born<.8)continue;
+  if(b.position.y-TR[b.tier]<TOP&&Math.abs(b.velocity.y)<1.5){b.over+=dt}else b.over=Math.max(0,b.over-dt*2);worst=Math.max(worst,b.over)}
+ if(worst>.5){warnT+=dt;if(Math.floor(warnT*4)!==Math.floor((warnT-dt)*4))sfx.warn()}else warnT=0;
+ if(worst>2.2)gameOver();return worst}
+function gameOver(){if(state!=='play')return;state='over';bgmStop();sfx.over();buzz([60,40,100]);$('field').classList.add('dead');setTimeout(showOver,1200)}
+function showOver(){$('overScore').textContent=score.toLocaleString();$('overTitle').textContent='GAME OVER';$('overInfo').textContent='최고 단계 · '+NAME[maxTier]+(score>=best&&score>0?' · NEW BEST!':'');
+ lastWin={score,stage:maxTier+1,mode:'normal',saved:false};$('bSave').textContent='OK';$('bSave').disabled=false;$('nameIn').value=localStorage.getItem('mandu-name')||'';show('ovOver')}
+
+/* ===== 그리기 ===== */
+function resize(){const r=$('field').getBoundingClientRect();dpr=Math.min(3,devicePixelRatio||1);cv.width=Math.max(1,r.width*dpr);cv.height=Math.max(1,r.height*dpr);SC=Math.min(cv.width/W,cv.height/H);OX=(cv.width-W*SC)/2;OY=(cv.height-H*SC);draw(0)}
+addEventListener('resize',resize);if(window.visualViewport)visualViewport.addEventListener('resize',resize);if(window.ResizeObserver)new ResizeObserver(resize).observe($('field'));
+function drawPiece(k,px,py,ang,mood,sc,alpha){const im=IMG[(mood||'')+k];if(!im||!im.complete)return;const s=TR[k]*2*44/32*(sc||1);x.save();x.translate(px,py);x.rotate(ang||0);if(alpha!=null)x.globalAlpha=alpha;x.drawImage(im,-s/2,-s/2,s,s);x.restore()}
+function draw(dt){x.setTransform(1,0,0,1,0,0);x.fillStyle='#1a130e';x.fillRect(0,0,cv.width,cv.height);
+ let sx=0,sy=0;if(shake>0){sx=(Math.random()*2-1)*5*shake;sy=(Math.random()*2-1)*5*shake}
+ x.setTransform(SC,0,0,SC,OX+sx*SC,OY+sy*SC);
+ // 찜기(대나무 바구니) 안쪽
+ const top=-OY/SC;const g=x.createLinearGradient(0,top,0,H);g.addColorStop(0,'#241a12');g.addColorStop(1,'#3a2a1c');x.fillStyle=g;x.fillRect(0,top,W,H-top);
+ x.strokeStyle='rgba(255,220,170,.05)';x.lineWidth=1;for(let yy=H-14;yy>top;yy-=14){x.beginPath();x.moveTo(0,yy);x.lineTo(W,yy);x.stroke()}
+ x.fillStyle='#8a6a45';x.fillRect(-4,top,4,H-top);x.fillRect(W,top,4,H-top);x.fillRect(-4,H,W+8,4);
+ // 위험선
+ const danger=state==='play'&&warnT>0;x.strokeStyle=danger&&Math.floor(tGame*6)%2?'#ff5a6e':'rgba(255,220,170,.28)';x.lineWidth=danger?2:1;x.setLineDash([6,5]);x.beginPath();x.moveTo(0,TOP);x.lineTo(W,TOP);x.stroke();x.setLineDash([]);
+ // 떨어뜨릴 위치 안내 + 지금 팡팡이
+ if(state==='play'){const r=TR[cur],px=Math.max(r+1,Math.min(W-r-1,aimX));x.strokeStyle='rgba(255,241,220,.22)';x.setLineDash([2,6]);x.beginPath();x.moveTo(px,TOP-r);x.lineTo(px,H);x.stroke();x.setLineDash([]);
+  drawPiece(cur,px,TOP-r-6,0,'',1,dropT>0?.45:1)}
+ // 팡팡이들
+ const now=performance.now()/1000;
+ for(const b of bodies){const k=b.tier,popS=Math.max(0,1-(tGame-b.pop)/.18);let mood='';
+  if(b.over>.5)mood='x';else if((now+b.blink)%4<.14)mood='b';else if(b.speed>6)mood='o';
+  drawPiece(k,b.position.x,b.position.y,b.angle,mood,1+popS*.25)}
+ // 효과
+ for(const f of FX){f.l-=dt;if(f.txt){f.y-=24*dt;x.globalAlpha=Math.max(0,Math.min(1,f.l*1.5));x.font=(f.big?'18px':'12px')+' Galmuri11, Silkscreen';x.textAlign='center';x.lineWidth=3;x.strokeStyle='#1a130e';x.strokeText(f.txt,f.x,f.y);x.fillStyle=f.c;x.fillText(f.txt,f.x,f.y);x.globalAlpha=1;continue}
+  f.vy+=300*dt;f.x+=f.vx*dt;f.y+=f.vy*dt;f.vx*=.97;x.globalAlpha=Math.max(0,f.l*1.6);x.fillStyle=f.c;x.fillRect(f.x,f.y,f.s,f.s);x.globalAlpha=1}
+ FX=FX.filter(f=>f.l>0);
+ if(state==='play'&&warnT>.3){x.font='13px Galmuri11';x.textAlign='center';x.fillStyle='#ff8aa0';x.fillText('넘치기 직전이에요!',W/2,TOP-56)}}
+function drawNext(){const c=$('nextC'),g=c.getContext('2d');g.clearRect(0,0,c.width,c.height);const im=IMG[''+nxt];if(!im)return;const draw=()=>{g.clearRect(0,0,c.width,c.height);const s=24+nxt*6;g.drawImage(im,(c.width-s)/2,(c.height-s)/2,s,s)};if(im.complete)draw();else im.onload=draw}
+
+/* ===== 조작: 손가락으로 위치 고르고, 떼면 떨어뜨리기 ===== */
+const fld=$('field');let aiming=false;
+const toX=e=>{const r=cv.getBoundingClientRect();return((e.clientX-r.left)*dpr-OX)/SC};
+fld.addEventListener('pointerdown',e=>{if(state!=='play')return;aiming=true;aimX=toX(e);try{fld.setPointerCapture(e.pointerId)}catch(_){}});
+fld.addEventListener('pointermove',e=>{if(state!=='play')return;if(aiming||e.pointerType==='mouse')aimX=toX(e)});
+fld.addEventListener('pointerup',e=>{if(state!=='play'||!aiming)return;aiming=false;aimX=toX(e);drop()});
+fld.addEventListener('pointercancel',()=>{aiming=false});
+fld.addEventListener('touchmove',e=>e.preventDefault(),{passive:false});
+const keys={};addEventListener('keydown',e=>{keys[e.key]=1;if(state==='play'&&(e.key===' '||e.key==='ArrowDown'||e.key==='Enter')){e.preventDefault();drop()}if(e.key==='Escape'||e.key==='p')togglePause()});addEventListener('keyup',e=>keys[e.key]=0);
+
+/* ===== 루프 ===== */
+let lastT=0,acc=0;
+function loop(t){try{const dt=lastT?Math.min(.05,(t-lastT)/1000):0;lastT=t;
+ if(state==='play'||state==='over'){const kx=(keys.ArrowRight?1:0)-(keys.ArrowLeft?1:0);if(kx&&state==='play')aimX=Math.max(0,Math.min(W,aimX+kx*220*dt));
+  if(state==='play'){tGame+=dt;dropT=Math.max(0,dropT-dt)}
+  acc+=dt;let n=0;while(acc>=1/60&&n<4){Engine.update(engine,1000/60);doMerges();acc-=1/60;n++}if(n>=4)acc=0;
+  if(state==='play')checkOver(dt)}
+ shake=Math.max(0,shake-dt);bgmTick();draw(dt)}catch(err){try{console.error(err)}catch(e){}}requestAnimationFrame(loop)}
+
+/* ===== HUD · 화면 ===== */
+const PIX={pause:['........','.11..11.','.11..11.','.11..11.','.11..11.','.11..11.','.11..11.','........'],note:['....111.','....1111','....1..1','....1...','....1...','.1111...','11111...','.111....'],trophy:['.111111.','11111111','1.1111.1','.111111.','..1111..','...11...','..1111..','.111111.']};
+function pixIcon(k){const m=PIX[k];let r='';m.forEach((row,y)=>[...row].forEach((v,xx)=>{if(v==='1')r+=`<rect x="${xx}" y="${y}" width="1.02" height="1.02"/>`}));return `<i class="pix"><svg viewBox="0 0 ${m[0].length} ${m.length}" shape-rendering="crispEdges" fill="currentColor">${r}</svg></i>`}
+document.querySelectorAll('[data-ic]').forEach(el=>{el.outerHTML=pixIcon(el.dataset.ic).replace('<i class="pix"','<i class="pix" data-ic="'+el.dataset.ic+'"')});
+function hud(){$('hScore').textContent=score.toLocaleString();const s=$('hScore'),p=s.parentElement;s.style.fontSize='14px';let f=14;while(s.scrollWidth>p.clientWidth-6&&f>8){f--;s.style.fontSize=f+'px'}}
+function show(id){$(id).classList.add('show')}function hide(id){$(id).classList.remove('show')}
+(function(){const sh=$('show');[0,2,4,6,9].forEach(k=>{const im=document.createElement('img');im.src=IMG[''+k].src;im.style.cssText='width:'+(k===9?44:30)+'px;height:auto';im.alt='';sh.appendChild(im)})})();
+function togglePause(){if(state==='play'){state='pause';bgmStop();show('ovPause')}else if(state==='pause'){state='play';hide('ovPause');bgmStart();lastT=0}}
+$('bPause').onclick=togglePause;$('bResume').onclick=togglePause;
+$('bRestart').onclick=()=>{hide('ovPause');startGame()};
+function toMenu(){['ovPause','ovOver','ovRank'].forEach(hide);$('field').classList.remove('dead');state='title';bgmStop();if(engine){Composite.clear(engine.world,false);bodies=[]}FX=[];show('ovTitle');hud()}
+$('bMenu').onclick=toMenu;$('bMenu2').onclick=toMenu;
+$('bSound').onclick=()=>{sound=!sound;$('bSound').classList.toggle('on',sound);if(ac&&master)master.gain.value=sound?1:0;if(sound&&state==='play')bgmStart()};
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&state==='play')togglePause()});
+const TUT={"goal":"같은 팡팡이 둘이 닿으면 합쳐져서 커져요!<br>끝까지 키우면 통통한 교자만두가 돼요.<br>점선 위로 넘치면 게임 끝!","touch":[["← 밀기 →","떨어뜨릴 곳 고르기"],["손 떼기","떨어뜨리기"]],"pc":[["마우스 / ← →","떨어뜨릴 곳 고르기"],["클릭 / SPACE","떨어뜨리기"]]};
+$('bStart').onclick=()=>{unlock();phTut('mandu-tut',TUT,startGame)};
+$('bRetry').onclick=()=>{hide('ovOver');startGame()};
+document.querySelectorAll('[data-close]').forEach(b=>b.onclick=()=>hide(b.dataset.close));
+
+/* ===== 랭킹 ===== */
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function local(){try{return JSON.parse(localStorage.getItem('mandu-ranks')||'[]')}catch(e){return[]}}
+$('bSave').onclick=async()=>{if(!lastWin||lastWin.saved)return;const n=($('nameIn').value.trim()||'익명').slice(0,8);localStorage.setItem('mandu-name',n);lastWin.saved=true;lastWin.n=n;$('bSave').textContent='…';$('bSave').disabled=true;
+ const rec={n,s:lastWin.score,v:lastWin.stage,m:lastWin.mode};const l=local();l.push(rec);localStorage.setItem('mandu-ranks',JSON.stringify(l.slice(-300)));
+ try{await fetch(`${RANK_URL}?g=mandu&a=add&n=${encodeURIComponent(n)}&s=${rec.s}&v=${rec.v}&m=${rec.m}`)}catch(e){}$('bSave').textContent='✓';openRank()};
+async function openRank(){show('ovRank');render(null,true);try{const j=await fetch(`${RANK_URL}?g=mandu`).then(r=>r.json());render(j.top||[])}catch(e){render(local())}}
+function render(rows,loading){if(loading){$('rankList').innerHTML='<span class="em">LOADING…</span>';return}rows=rows.slice().sort((a,b)=>b.s-a.s);const mw=lastWin&&lastWin.saved?lastWin:null;let marked=false;
+ $('rankList').innerHTML=rows.length?rows.map((r,i)=>{let cls='';if(mw&&!marked&&r.n===mw.n&&+r.s===mw.score){cls='me';marked=true}const tier=Math.max(1,Math.min(10,+r.v||1));
+  return `<div class="${cls}"><span class="r">${i+1}</span><span>${esc(r.n)}</span><span class="s">${r.s}</span><span class="m"><img src="${IMG[''+(tier-1)].src}" style="width:18px;height:18px;vertical-align:middle" alt=""></span></div>`}).join(''):'<span class="em">아직 기록이 없어요</span>'}
+$('bRank').onclick=()=>{if(state==='play')togglePause();openRank()};$('bRank2').onclick=openRank;$('bRank3').onclick=openRank;
+
+if(location.hash==='#test')window.__t={get state(){return state},get bodies(){return bodies},get score(){return score},get maxTier(){return maxTier},startGame,drop,setX:v=>aimX=v,addPiece:(k,px,py)=>addPiece(k,px,py,0)};
+resize();hud();requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
